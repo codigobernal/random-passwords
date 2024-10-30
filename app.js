@@ -6,6 +6,8 @@ const btnImprimir = document.getElementById("imprimirPassword");
 const inputResultado = document.getElementById("passwordGenerada");
 const formulario = document.getElementById("formulario");
 const mensaje = document.getElementById("mensaje");
+const toastElement = document.getElementById("toastBootstrap");
+const toastBootstrap = new bootstrap.Toast(toastElement);
 
 // Colocando un readOnly para que el valor no pueda ser modificado
 inputResultado.readOnly = true;
@@ -42,19 +44,8 @@ function generarPassword() {
 function copiarPassword() {
   btnCopiar.addEventListener("click", () => {
     navigator.clipboard.writeText(inputResultado.value).then(() => {
-      if (Notification.permission === "granted") {
-        new Notification("¡Hola!", {
-          body: "Tu contraseña ha sido copiada en el portapapeles",
-        });
-      } else if (Notification.permission !== "denied") {
-        Notification.requestPermission().then((permission) => {
-          if (permission === "granted") {
-            new Notification("¡Hola!", {
-              body: "Habilita las notificaciones para que estes enterado de lo que está sucediendo",
-            });
-          }
-        });
-      }
+      // Muestra el toast
+      toastBootstrap.show();
     });
   });
 }
