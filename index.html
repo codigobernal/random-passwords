@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-light">
+  <body>
     <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
       <h1 class="fw-bold" id="tituloPassword">Generador de contraseñas aleatorias</h1>
       <p class="fs-5" id="parrafoPassword">Crea contraseñas seguras para proteger tus cuentas de Internet.</p>
@@ -25,7 +25,13 @@
           placeholder="Contraseña generada"
         />
         <form method="POST" id="formulario">
-          <button type="submit" id="generarPassword" title="Generar contraseña" class="btn btn-primary">
+          <button
+            type="submit"
+            id="generarPassword"
+            title="Generar contraseña"
+            class="btn text-white"
+            style="background: #ff6600"
+          >
             <i class="fas fa-sync-alt"></i>
           </button>
         </form>

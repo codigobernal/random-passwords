@@ -9,9 +9,6 @@ const mensaje = document.getElementById("mensaje");
 const toastElement = document.getElementById("toastBootstrap");
 const toastBootstrap = new bootstrap.Toast(toastElement);
 
-// Colocando un readOnly para que el valor no pueda ser modificado
-inputResultado.readOnly = true;
-
 function generarPassword() {
   let letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
   let numeros = "0123456789";
